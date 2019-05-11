@@ -23,6 +23,7 @@ pkg=$2
 echo "Checking package availability..."
 
 if [[ $(ls $PATH | grep $pkg) != "" ]]
+then
     echo "Package already installed."
     exit 1
 fi
