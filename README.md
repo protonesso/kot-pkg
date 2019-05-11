@@ -16,7 +16,7 @@ chmod +x kot-pkg
 mkdir pkgs
 ```
 After that, you may want to be able to use kot-pkg from any place. To do that, you need to
-edit your /etc/profile. Add this line to it(in the end!).
+edit your /etc/profile. Add this line to it in the end(replace /path-to-kot-pkg with the path to the folder you made.).
 ```
 export PATH="$PATH":/path-to-kot-pkg:/path-to-kot-pkg/pkgs
 ```
