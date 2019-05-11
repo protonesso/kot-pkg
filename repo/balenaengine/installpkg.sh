@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "arch is $ARCH"
+echo "arch is $HOSTTYPE"
 echo "test succesful"
