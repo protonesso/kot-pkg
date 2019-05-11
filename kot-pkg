@@ -1,0 +1,38 @@
+#!/bin/bash
+
+ver=0.02
+
+echo "kot-pkg ver $ver"
+echo "by TheOrangeCat"
+
+pathtoself=$(dirname $0)
+
+echo "Updating pkglist..."
+
+wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/pkglist -O $pathtoself/pkglist
+
+option=$1
+pkg=$2
+
+echo "Checking package availability..."
+
+case $option in
+    install)
+        if [[ $(cat $pathtoself/pkglist | grep $pkg) = "" ]]
+        then
+            echo "Package not found. Exiting..."
+            exit 1
+        else
+            echo "Package found. Installing..."
+            mkdir $pathtoself/pkg-temp
+            wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/$pkg/installpkg.sh -O $pathtoself/pkg-temp/inst.sh
+            bash $pathtoself/pkg-temp/inst.sh
+            rm -rf $pathtoself/pkg-temp/
+            echo "Installation complete. Thank you for using kot-pkg!"
+        fi
+        ;;
+    *)
+        echo "You set a wrong option, or I haven't written it yet :)"
+        exit 1
+        ;;
+esac
