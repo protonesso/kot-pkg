@@ -38,7 +38,7 @@ case $option in
             echo "Package found. Installing..."
             mkdir $pathtoself/pkg-temp
             wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/$pkg/installpkg.sh -O $pathtoself/pkg-temp/inst.sh
-            bash $pathtoself/pkg-temp/inst.sh
+            bash $pathtoself/pkg-temp/inst.sh $pathtoself/pkgs
             rm -rf $pathtoself/pkg-temp/
             echo "Installation complete. Thank you for using kot-pkg!"
         fi
