@@ -13,15 +13,16 @@ Then, go to that folder and download the kot-pkg executable.
 cd kot-pkg
 wget https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg
 chmod +x kot-pkg
+mkdir pkgs
 ```
 After that, you may want to be able to use kot-pkg from any place. To do that, you need to
 edit your /etc/profile. Add this line to it(in the end!).
 ```
-export PATH="$PATH":/path-to-kot-pkg
+export PATH="$PATH":/path-to-kot-pkg:/path-to-kot-pkg/pkgs
 ```
 That's it! You can now use it wherever you want.
 
 ## Making packages
 
-Making packages is simple. The installation (and probably other proccesses) is just running a script. \n
+Making packages is simple. The installation (and probably other proccesses) is just running a script. kot-pkg gives the script the installation folder.
 You also need to add a line to pkglist with the package's name.
