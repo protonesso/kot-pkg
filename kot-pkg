@@ -5,9 +5,9 @@ ver=0.02
 echo "kot-pkg ver $ver"
 echo "by TheOrangeCat"
 
-if [[ $EUID != 0 ]]
+if [[ $EUID = 0 ]]
 then
-    echo "kot-pkg must be run with root or sudo"
+    echo "kot-pkg mustn't be run with root or sudo"
     exit 1
 fi
 
