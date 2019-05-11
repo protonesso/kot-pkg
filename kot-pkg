@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver=0.02
+ver=0.04
 
 echo "kot-pkg ver $ver"
 echo "by TheOrangeCat"
@@ -20,13 +20,13 @@ wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/pkgli
 option=$1
 pkg=$2
 
-echo "Checking package availability..."
-
-if [[ $(ls $PATH | grep $pkg) != "" ]]
+if [[ $(ls /bin | grep $pkg) != "" && $(ls /sbin | grep $pkg) != "" && $(ls /usr/bin | grep $pkg) != "" && $(ls /usr/sbin | grep $pkg) != "" && $(ls $pathtoself/pkgs | grep $pkg) ]]
 then
-    echo "Package already installed."
+    echo "$pkg is already installed"
     exit 1
 fi
+
+echo "Checking package availability..."
 
 case $option in
     install)
