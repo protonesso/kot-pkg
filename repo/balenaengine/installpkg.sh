@@ -1,3 +1,3 @@
 #!/bin/bash
-echo $ARCH
+echo "arch is $ARCH"
 echo "test succesful"
