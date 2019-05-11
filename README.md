@@ -12,9 +12,10 @@ Then, go to that folder and download the kot-pkg executable.
 ```
 cd kot-pkg
 wget https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg
+chmod +x kot-pkg
 ```
 After that, you may want to be able to use kot-pkg from any place. To do that, you need to
-edit your .bashrc (or whatever your shell is. In my case, it's .zshrc)
+edit your /etc/profile. Add this line to it(in the end!).
 ```
 export PATH="$PATH":/path-to-kot-pkg
 ```
