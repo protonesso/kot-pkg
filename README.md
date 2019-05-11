@@ -21,3 +21,7 @@ export PATH="$PATH":/path-to-kot-pkg
 ```
 That's it! You can now use it wherever you want.
 
+## Making packages
+
+Making packages is simple. The installation (and probably other proccesses) is just running a script.
+You also need to add a line to pkglist with the package's name.
