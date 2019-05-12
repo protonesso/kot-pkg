@@ -48,6 +48,6 @@ case $option in
         exit 1
         ;;
     selfupdate)
-        wget https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg -O $pathtoself/kot-pkg
+        wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg -O $pathtoself/kot-pkg
         ;;
 esac
