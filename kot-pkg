@@ -43,7 +43,9 @@ case $option in
         fi
         ;;
     selfupdate)
+        echo "Self-updating..."
         wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg -O $pathtoself/kot-pkg
+        echo "Done."
         ;;
     *)
         echo "You set a wrong option, or I haven't written it yet :)"
