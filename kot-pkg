@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver=0.05
+ver=0.06
 
 echo "kot-pkg ver $ver"
 echo "by TheOrangeCat"
@@ -44,7 +44,8 @@ case $option in
         ;;
     selfupdate)
         echo "Self-updating..."
-        bash $pathtoself/selfupdate.sh
+        wget https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/selfupdate.sh -O $pathtoself/selfupdate.sh
+        bash $pathtoself/selfupdate.sh $pathtoself
         echo "Done."
         ;;
     *)
