@@ -44,7 +44,7 @@ case $option in
         ;;
     selfupdate)
         echo "Self-updating..."
-        wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg -O $pathtoself/kot-pkg
+        bash $pathtoself/selfupdate.sh
         echo "Done."
         ;;
     *)
