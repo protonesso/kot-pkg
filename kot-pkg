@@ -20,7 +20,7 @@ wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/pkgli
 option=$1
 pkg=$2
 
-if [[ $(ls /bin | grep $pkg) != "" && $(ls /sbin | grep $pkg) != "" && $(ls /usr/bin | grep $pkg) != "" && $(ls /usr/sbin | grep $pkg) != "" && $(ls $pathtoself/pkgs | grep $pkg) ]]
+if [[ $(ls /bin | grep $pkg) != "" && $(ls /sbin | grep $pkg) != "" && $(ls /usr/bin | grep $pkg) != "" && $(ls /usr/sbin | grep $pkg) != "" && $(ls $pathtoself/pkgs | grep $pkg) ]] ;
 then
     echo "$pkg is already installed"
     exit 1
