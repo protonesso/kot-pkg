@@ -20,16 +20,15 @@ wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/pkgli
 option=$1
 pkg=$2
 
-if [[ $(ls /bin | grep $pkg) != "" && $(ls /sbin | grep $pkg) != "" && $(ls /usr/bin | grep $pkg) != "" && $(ls /usr/sbin | grep $pkg) != "" && $(ls $pathtoself/pkgs | grep $pkg) ]] ;
-then
-    echo "$pkg is already installed"
-    exit 1
-fi
-
 echo "Checking package availability..."
 
 case $option in
     install)
+        if [[ $(ls /bin | grep $pkg) != "" && $(ls /sbin | grep $pkg) != "" && $(ls /usr/bin | grep $pkg) != "" && $(ls /usr/sbin | grep $pkg) != "" && $(ls $pathtoself/pkgs | grep $pkg) ]] ;
+        then
+            echo "$pkg is already installed"
+            exit 1
+        fi
         if [[ $(cat $pathtoself/pkglist | grep $pkg) = "" ]]
         then
             echo "Package not found. Exiting..."
@@ -44,7 +43,7 @@ case $option in
         fi
         ;;
     selfupdate)
-        wget https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg
+        wget https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg -O $pathtoself/kot-pkg
         ;;
     *)
         echo "You set a wrong option, or I haven't written it yet :)"
