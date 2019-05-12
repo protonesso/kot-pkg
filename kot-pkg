@@ -42,12 +42,11 @@ case $option in
             echo "Installation complete. Thank you for using kot-pkg!"
         fi
         ;;
-    
+    selfupdate)
+        wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg -O $pathtoself/kot-pkg
+        ;;
     *)
         echo "You set a wrong option, or I haven't written it yet :)"
         exit 1
-        ;;
-    selfupdate)
-        wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/kot-pkg -O $pathtoself/kot-pkg
         ;;
 esac
