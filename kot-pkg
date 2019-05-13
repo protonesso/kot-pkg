@@ -48,6 +48,11 @@ case $option in
         bash $pathtoself/subroutines/selfupdate.sh $pathtoself
         echo "Done."
         ;;
+    help)
+        echo "Usage: kot-pkg {install|selfupdate|help} [package]"
+        echo "install - install a package"
+        echo "selfupdate - update kot-pkg and it's subroutines"
+        echo "help - display this menu"
     *)
         echo "You set a wrong option, or I haven't written it yet :)"
         exit 1
