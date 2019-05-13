@@ -53,6 +53,7 @@ case $option in
         echo "install - install a package"
         echo "selfupdate - update kot-pkg and it's subroutines"
         echo "help - display this menu"
+        ;;
     *)
         echo "You set a wrong option, or I haven't written it yet :)"
         exit 1
