@@ -5,7 +5,7 @@ ver=0.07
 echo "kot-pkg ver $ver"
 echo "by TheOrangeCat"
 
-if [[ $EUID = 0 ]]
+if [[ $EUID = 0 ]];
 then
     echo "kot-pkg mustn't be run with root or sudo"
     exit 1
@@ -29,7 +29,7 @@ case $option in
             echo "$pkg is already installed"
             exit 1
         fi
-        if [[ $(cat $pathtoself/pkglist | grep $pkg) = "" ]]
+        if [[ $(cat $pathtoself/pkglist | grep $pkg) = "" ]];
         then
             echo "Package not found. Exiting..."
             exit 1
