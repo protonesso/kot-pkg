@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver=0.08
+ver=0.09
 
 echo "kot-pkg ver $ver"
 echo "by TheOrangeCat"
