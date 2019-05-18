@@ -19,15 +19,32 @@ wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/pkgli
 
 option=$1
 pkg=$2
-
+addopt=$3
 echo "Checking package availability..."
 
 case $option in
     install)
         if [[ $(ls $path | grep $pkg) != "" ]]
         then
-            echo "$pkg is already installed"
-            exit 1
+            case $addopt in
+                "--force-inst")
+                    echo "WARNING: $pkg is installed, but the --force-inst flag is set."
+                    echo "DO NOT reinstall packages unless you know what you're doing."
+                    echo "Continue?[y/n]"
+                    read force-inst-confirm
+                    case $force-inst-confirm in
+                        y)
+                        ;;
+                        *)
+                        exit 1
+                        ;;
+                    esac
+                    ;;
+                 *)
+                    echo "$pkg is already installed"
+                    exit 1
+                    ;;
+              esac
         fi
         if [[ $(cat $pathtoself/pkglist | grep $pkg) = "" ]]
         then
