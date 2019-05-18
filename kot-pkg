@@ -31,9 +31,8 @@ case $option in
                     echo "WARNING: $pkg is installed, but the --force-inst flag is set."
                     echo "DO NOT reinstall packages unless you know what you're doing."
                     echo "Continue?[y/n]"
-                    force-inst-confirm=0
-                    read force-inst-confirm
-                    case $force-inst-confirm in
+                    read forceinstconfirm
+                    case $forceinstconfirm in
                         y)
                         ;;
                         *)
