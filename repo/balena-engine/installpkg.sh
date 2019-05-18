@@ -4,5 +4,4 @@ mkdir $1/../pkgtemp/balena-engine
 tar -xvzf $1/../pkgtemp/balena-engine.tar.gz --one-top-level=$1/../pkgtemp/balena-engine/
 cd $1/../pkgtemp/balena-engine
 make && make install
-cd $pwd
-
+cd $OLDPWD
