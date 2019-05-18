@@ -24,7 +24,7 @@ echo "Checking package availability..."
 
 case $option in
     install)
-        if [[ $(ls $path | grep $pkg) != "" ]]
+        if [[ $(ls $path | grep $pkg) != " " ]]
         then
             case $addopt in
                 "--force-inst")
