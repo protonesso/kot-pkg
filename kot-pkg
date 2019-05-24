@@ -67,6 +67,7 @@ case $option in
         fi
         echo "Removing $pkg..."
         bash $pathtoself/pkgs/"$pkg".d/rmpkg.sh $pathtoself/pkgs/"$pkg".d/
+        ;;
     selfupdate)
         echo "Self-updating..."
         wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/subroutines/selfupdate.sh -O $pathtoself/subroutines/selfupdate.sh
