@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver=0.09
+ver=0.10
 
 echo "kot-pkg ver $ver"
 echo "by TheOrangeCat"
@@ -65,6 +65,7 @@ case $option in
             echo "$pkg is not installed, or might be out of kot-pkg's reach."
             exit 1
         fi
+        echo "Removing $pkg..."
         bash $pathtoself/pkgs/"$pkg".d/rmpkg.sh $pathtoself/pkgs/"$pkg".d/
     selfupdate)
         echo "Self-updating..."
