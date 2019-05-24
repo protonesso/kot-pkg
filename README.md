@@ -1,6 +1,6 @@
 # kot-pkg
 
-kot-pkg is a simple (and for now raw) package manager. It uses bash and other basic utilities. https://discord.gg/gjukraG
+kot-pkg is a simple (and for now raw) package manager. It uses bash and other basic utilities.
 
 ## Installing
 
