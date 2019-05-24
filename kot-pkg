@@ -24,7 +24,7 @@ echo "Checking package availability..."
 
 case $option in
     install)
-        if [[ $(ls $path | grep $pkg) != " " ]]
+        if [[ $(ls $path | grep $pkg) != "" ]]
         then
             case $addopt in
                 "--force-inst")
@@ -59,6 +59,13 @@ case $option in
             echo "Installation complete. Thank you for using kot-pkg!"
         fi
         ;;
+    remove)
+        if [[ $(ls $pathtoself/pkgs | grep $pkg) = "" ]]
+        then
+            echo "$pkg is not installed, or might be out of kot-pkg's reach."
+            exit 1
+        fi
+        bash $pathtoself/pkgs/"$pkg".d/rmpkg.sh $pathtoself/pkgs/"$pkg".d/
     selfupdate)
         echo "Self-updating..."
         wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/subroutines/selfupdate.sh -O $pathtoself/subroutines/selfupdate.sh
@@ -66,7 +73,7 @@ case $option in
         echo "Done."
         ;;
     help)
-        echo "Usage: kot-pkg {install|selfupdate|help} [package]"
+        echo "Usage: kot-pkg {install|selfupdate|help|remove} [package]"
         echo "install - install a package"
         echo "selfupdate - update kot-pkg and it's subroutines"
         echo "help - display this menu"
