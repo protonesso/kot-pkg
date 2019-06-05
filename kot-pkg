@@ -11,6 +11,23 @@ then
     exit 1
 fi
 
+case $OSTYPE in
+    linux)
+        kotostype=linux
+        ;;
+    *)
+        exit 2
+        ;;
+esac
+case $HOSTTYPE in
+    i686)
+        kothosttype=x86
+        ;;
+    x86_64)
+        kothosttype=amd64
+        ;;
+esac
+
 pathtoself=$(dirname $0)
 
 echo "Updating pkglist..."
