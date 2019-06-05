@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver=0.10
+ver=0.11
 
 echo "kot-pkg ver $ver"
 echo "by TheOrangeCat"
@@ -53,8 +53,10 @@ case $option in
         else
             echo "Package found. Installing..."
             mkdir $pathtoself/pkg-temp
-            wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/$pkg/installpkg.sh -O $pathtoself/pkg-temp/inst.sh
-            bash $pathtoself/pkg-temp/inst.sh $pathtoself/pkgs
+            wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/$pkg/"$pkg"-"$kotostype"-"$kothosttype".kotpkg -O $pathtoself/pkg-temp/"$pkg"-"$kotostype"-"$kothosttype".kotpkg
+            tar -xvJf $pathtoself/pkg-temp/"$pkg"-"$kotostype"-"$kothosttype".kotpkg --one-top-level=$pathtoself/pkgs/
+            wget -q https://raw.githubusercontent.com/TheOrangeCat/kot-pkg/master/repo/$pkg/postinst.sh -O $pathtoself/pkg-temp/postinst.sh
+            bash $pathtoself/pkg-temp/postinst.sh $pathtoself
             rm -rf $pathtoself/pkg-temp/
             echo "Installation complete. Thank you for using kot-pkg!"
         fi
