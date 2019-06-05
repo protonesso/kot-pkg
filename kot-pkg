@@ -12,7 +12,7 @@ then
 fi
 
 case $OSTYPE in
-    linux)
+    linux-gnu)
         kotostype=linux
         ;;
     *)
