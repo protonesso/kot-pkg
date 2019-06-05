@@ -26,6 +26,9 @@ case $HOSTTYPE in
     x86_64)
         kothosttype=amd64
         ;;
+    *)
+        exit 2
+        ;;
 esac
 
 pathtoself=$(dirname $0)
