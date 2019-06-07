@@ -24,6 +24,4 @@ export PATH="$PATH":/path-to-kot-pkg:/path-to-kot-pkg/pkgs
 That's it! You can now use it wherever you want.
 
 ## Making packages
-
-Making packages is simple. The installation (and probably other proccesses) is just running a script. kot-pkg gives the script the installation folder.
-You also need to add a line to pkglist with the package's name.
+idk---this is Linux, you guys are on your own
