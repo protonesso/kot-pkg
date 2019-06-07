@@ -23,5 +23,5 @@ export PATH="$PATH":/path-to-kot-pkg:/path-to-kot-pkg/pkgs
 ```
 That's it! You can now use it wherever you want.
 
-## Making packages
+## removing packages
 idk---this is Linux, you guys are on your own
