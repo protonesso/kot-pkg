@@ -26,7 +26,7 @@ then
 fi
 
 case $OSTYPE in
-    linux-gnu)
+    linux-gnu|linux-musl|linux-uclibc|linux-android)
         kotostype=linux
         ;;
     *)
@@ -34,7 +34,7 @@ case $OSTYPE in
         ;;
 esac
 case $HOSTTYPE in
-    i686)
+    i?86)
         kothosttype=x86
         ;;
     x86_64)
